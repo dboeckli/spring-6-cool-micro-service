@@ -1,15 +1,13 @@
-package ch.dboeckli.template;
-// TODO: RENAME PACKAGE
+package ch.dboeckli.springframeworkguru.spring6coolmicroservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-// TODO: RENAME ME
-public class Spring6TemplateApplication {
+public class Spring6CoolMicroServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Spring6TemplateApplication.class, args);
+        SpringApplication.run(Spring6CoolMicroServiceApplication.class, args);
     }
 
 }
