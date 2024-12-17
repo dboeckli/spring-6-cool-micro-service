@@ -1,12 +1,10 @@
-package ch.dboeckli.template;
-// TODO: RENAME PACKAGE
+package ch.dboeckli.springframeworkguru.spring6coolmicroservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-// TODO: RENAME ME
-class Spring6TemplateApplicationTests {
+class Spring6CoolMicroServiceApplicationTests {
 
     @Test
     void contextLoads() {
