@@ -19,7 +19,9 @@ public class DrinkRequestListener {
 
     private final KafkaTemplate<String, Object> kafkaTemplate;
 
-    @KafkaListener(groupId = "CoolListener", topics = KafkaConfig.DRINK_REQUEST_COOL_TOPIC)
+    public static final String GROUP_ID = "CoolListener";
+
+    @KafkaListener(groupId = GROUP_ID, topics = KafkaConfig.DRINK_REQUEST_COOL_TOPIC)
     public void listenDrinkRequest(DrinkRequestEvent event) {
         log.info("### I am listening - Cool drink request" + event);
 
