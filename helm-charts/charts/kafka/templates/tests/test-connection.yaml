@@ -18,7 +18,7 @@ spec:
           ERROR_OCCURED=0
 
           echo "### Test 1: Checking Kafka broker status"
-          kafka-topics.sh --bootstrap-server {{ include "kafka.fullname" . }}:{{ .Values.kafka.clientPort }} --list
+          /opt/kafka/bin/kafka-topics.sh --bootstrap-server {{ include "kafka.fullname" . }}:{{ .Values.kafka.clientPort }} --list
 
           rc=$?
           echo "Exit code: ${rc}"
@@ -30,7 +30,7 @@ spec:
           fi
 
           echo "### Test 2: Creating a test topic"
-          kafka-topics.sh --bootstrap-server {{ include "kafka.fullname" . }}:{{ .Values.kafka.clientPort }} --create --topic test-topic --partitions 1 --replication-factor 1
+          /opt/kafka/bin/kafka-topics.sh --bootstrap-server {{ include "kafka.fullname" . }}:{{ .Values.kafka.clientPort }} --create --topic test-topic --partitions 1 --replication-factor 1
 
           rc=$?
           echo "Exit code: ${rc}"
@@ -42,7 +42,7 @@ spec:
           fi
 
           echo "### Test 3: Listing topics to verify test topic creation"
-          kafka-topics.sh --bootstrap-server {{ include "kafka.fullname" . }}:{{ .Values.kafka.clientPort }} --list | grep test-topic
+          /opt/kafka/bin/kafka-topics.sh --bootstrap-server {{ include "kafka.fullname" . }}:{{ .Values.kafka.clientPort }} --list | grep test-topic
 
           rc=$?
           echo "Exit code: ${rc}"
