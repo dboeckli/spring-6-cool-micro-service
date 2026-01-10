@@ -4,9 +4,7 @@ metadata:
   name: "{{ include "kafka.fullname" . }}-test-connection"
   namespace: {{ .Values.global.namespace }}
   labels:
-    app.kubernetes.io/component: helm-test
-    app.kubernetes.io/name: "{{ include "application-template.fullname" . }}-test-connection"
-    app.kubernetes.io/instance: "{{ .Release.Name }}-test"
+    {{- include "kafka.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test
 spec:
